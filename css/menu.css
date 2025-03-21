@@ -1,0 +1,253 @@
+/* FUENTES */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@300;400;500&display=swap');
+
+@font-face {
+    font-family: 'Vegasha';
+    src: url('../fonts/Vagesha Rolenda.woff') format('woff'),
+         url('../fonts/Vagesha Rolenda.ttf') format('truetype'),
+         url('../fonts/Vagesha Rolenda.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* ESTILO GLOBAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
+    overflow-x: hidden;
+    display: grid;
+    /* Cambié el display a grid para un mejor control del layout */
+    grid-template-rows: auto 1fr auto;
+    /* Definí las filas del grid: una para el header, otra para el contenido y otra para el footer */
+    min-height: 100vh;
+    background-color: #000;
+}
+
+/* video de fondo */
+#videoFondo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Cambié a cover para que el video cubra toda la pantalla */
+    z-index: -1;
+    /* Asegúrate de que el video esté detrás de otros elementos */
+    filter: brightness(45%) contrast(110%) saturate(110%);
+}
+
+/* HEADER */
+header {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 40px;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    animation: fadeIn 1.5s ease-out;
+}
+
+#logo {
+    width: 60px;
+    height: auto;
+    margin-left: 20px;
+}
+
+/* NAVBAR */
+nav {
+    display: flex;
+    justify-content: flex-end;
+    gap: 45px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #d4d4a5;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 300;
+    position: relative;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: #d4d4a5;
+    transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+nav a:hover {
+    color: #fff;
+}
+
+/* SECCIÓN 1: CONÓCENOS */
+.container1 {
+    display: grid;
+    place-items: center;
+    padding-top: 140px;
+    padding-bottom: 60px;
+    text-align: center;
+    gap: 30px;
+    min-height: 100vh;
+    grid-template-areas:
+        "titulo"
+        "descripcion";
+}
+
+#titulo1 {
+    grid-area: titulo;
+    font-family: 'Vegasha';
+    font-size: 200px;
+    color: #fff;
+    font-weight: 300;
+    letter-spacing: 4px;
+    text-shadow: 3px 3px 8px rgba(6, 209, 60, 0.3), 
+                 13px -3px 8px rgba(218, 0, 0, 0.1);
+    animation: fadeInUp 1.8s ease-out;
+}
+
+#descrip {
+    grid-area: descripcion;
+    font-size: 20px;
+    color: #d4d4a5;
+    max-width: 800px;
+    font-weight: 300;
+    letter-spacing: 1px;
+    line-height: 1.6;
+    animation: fadeIn 2.2s ease-out;
+    position: relative;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 30px;
+}
+
+/* Estilo del contenedor de la descripción */
+#descrip1::after {
+    /* Añadí un pseudo-elemento para la línea debajo del texto */
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    /* Cambié el left a 50% para centrar la línea */
+    transform: translateX(-50%);
+    width: 60px;
+    height: 1px;
+    background-color: #d4d4a5;
+}
+
+/* SECCIÓN 2: Tabla de menu */
+.menu_lujo_detalle {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    max-width: 1200px;
+    margin: 100px auto;
+    padding: 0 20px;
+    animation: fadeIn 2.5s ease-out;
+}
+
+.platillo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 30px;
+    border-radius: 30px;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.platillo:hover {
+    transform: scale(1.02);
+}
+
+.platillo .info h3 {
+    font-family: 'Vegasha';
+    font-size: 32px;
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+
+.platillo .info p {
+    font-size: 18px;
+    color: #d4d4a5;
+    line-height: 1.6;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+}
+
+.platillo .imagen img {
+    width: 100%;
+    border-radius: 20px;
+    object-fit: cover;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease;
+}
+
+.platillo .imagen img:hover {
+    transform: scale(1.02);
+}
+
+
+/* FOOTER */
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(183, 183, 90, 0.2);
+    animation: fadeIn 1.5s ease-out; /* Animación de entrada */
+}
+
+#slogan {
+    font-size: 16px;
+    font-style: italic;
+    color: #d4d4a5;
+    font-family: 'Cormorant Garamond', serif;
+    letter-spacing: 1.5px;
+}
+
+/* ANIMACIONES */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

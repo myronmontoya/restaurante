@@ -1,0 +1,205 @@
+/* FUENTES */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@300;400;500&display=swap');
+
+/* estilo de todo general */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+#logo {
+    width: 70px; /* Ajusta el tamaño del logo */
+    height: auto;
+    margin-left: 20px; /* Separación del borde */
+    display: inline-block;
+    vertical-align: middle; /* Alinea con el menú */
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+/* video de fondo */
+#videoFondo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    /* esto lo hago como si fuera el adove premiere */
+    filter: brightness(45%) contrast(110%) saturate(110%);
+}
+
+/* header */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Acomoda el logo y menú */
+    padding: 20px 40px;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    animation: fadeIn 1.5s ease-out; /* Animación de entrada */
+}
+
+
+/*la nav */
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 45px;
+    padding: 10px 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: #d4d4a5;
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 300;
+    position: relative;
+    padding: 5px 0;
+}
+
+/* Efecto de subrayado*/
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: #d4d4a5;
+    transition: width 0.3s ease;
+}
+
+/* Efecto hover */
+/*  cuando se pasa por encima */
+nav a:hover::after {
+    width: 100%;
+}
+
+/*  cuando se pasa por encima */
+nav a:hover {
+    text-decoration: none;
+    color: #fff;
+}
+
+/* primer contenedor */
+.container1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 0 20px;
+}
+
+/* titulo de almierante 15 */
+#nom_empresa {
+    font-family: 'Vegasha';
+    font-size: 200px;
+    text-align: center;
+    color: #ffffff;
+    font-weight: 300;
+    margin-bottom: 30px;
+    letter-spacing: 4px;
+    animation: fadeInUp 1.8s ease-out; 
+    text-shadow: 2px 2px 2px rgba(255, 0, 0, 1);
+}
+
+/* la fuente que quiero ingresar al css que es externa */
+@font-face {
+    font-family: 'Vegasha';
+    src: url('../fonts/Vagesha Rolenda.woff') format('woff'),
+         url('../fonts/Vagesha Rolenda.ttf') format('truetype'),
+         url('../fonts/Vagesha Rolenda.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/* deescripcion o el slogan de almirante 15 */
+#descrip1 {
+    text-align: center;
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+    color: #d4d4a5;
+    max-width: 800px;
+    margin: 0 auto;
+    font-weight: 300;
+    letter-spacing: 1px;
+    line-height: 1.6;
+    animation: fadeIn 2.2s ease-out;
+    position: relative;
+    padding-bottom: 20px;
+}
+
+/* ESTILO PARA EL PUNTO DE LA DESCRIPCIÓN */
+
+
+#descrip1::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 1px;
+    background-color: #d4d4a5;
+}
+
+
+/* Footer */
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(183, 183, 90, 0.2);
+    animation: fadeIn 1.5s ease-out; /* Animación de entrada */
+}
+
+
+
+#slogan {
+    font-size: 16px;
+    font-style: italic;
+    color: #d4d4a5;
+    font-family: 'Cormorant Garamond', serif;
+    letter-spacing: 1.5px; /* Espaciado entre letras */
+}
+
+/* aqui van las animaciones */
+/* esto le da como es que lñas requiero */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    from { 
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to { 
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
