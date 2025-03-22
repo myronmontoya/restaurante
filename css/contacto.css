@@ -1,0 +1,200 @@
+/* FUENTES */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@300;400;500&display=swap');
+
+@font-face {
+    font-family: 'Vegasha';
+    src: url('../fonts/Vagesha Rolenda.woff') format('woff'),
+         url('../fonts/Vagesha Rolenda.ttf') format('truetype'),
+         url('../fonts/Vagesha Rolenda.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* GLOBAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
+    overflow-x: hidden;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+    background-color: #000;
+}
+
+/* VIDEO DE FONDO */
+#videoFondo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    filter: brightness(45%) contrast(110%) saturate(110%);
+}
+
+/* HEADER */
+header {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 40px;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    animation: fadeIn 1.5s ease-out;
+}
+
+#logo {
+    width: 60px;
+    height: auto;
+    margin-left: 20px;
+}
+
+/* NAVBAR */
+nav {
+    display: flex;
+    justify-content: flex-end;
+    gap: 45px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #d4d4a5;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 300;
+    position: relative;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: #d4d4a5;
+    transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+nav a:hover {
+    color: #fff;
+}
+
+/* SECCION DE CONTACTO */
+.seccion_contacto_lujoso {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+    max-width: 1200px;
+    margin: 100px auto;
+    padding: 40px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 30px;
+    backdrop-filter: blur(6px);
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.1);
+    animation: fadeInUp 2s ease-out;
+}
+
+.contacto_info h2 {
+    font-family: 'Vegasha';
+    font-size: 36px;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.contacto_info p {
+    font-size: 18px;
+    color: #d4d4a5;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.contacto_info ul {
+    list-style: none;
+    color: #d4d4a5;
+    font-size: 16px;
+    line-height: 2;
+    padding-left: 0;
+}
+
+.multimedia_contacto {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.multimedia_contacto img {
+    width: 70%;
+    height: auto;
+    max-height: 300px;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease;
+}
+
+.multimedia_contacto video {
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease;
+}
+
+.multimedia_contacto img:hover,
+.multimedia_contacto video:hover {
+    transform: scale(1.02);
+}
+
+/* FOOTER */
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(183, 183, 90, 0.2);
+    animation: fadeIn 1.5s ease-out;
+}
+
+#slogan {
+    font-size: 16px;
+    font-style: italic;
+    color: #d4d4a5;
+    font-family: 'Cormorant Garamond', serif;
+    letter-spacing: 1.5px;
+}
+
+/* ANIMACIONES */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
